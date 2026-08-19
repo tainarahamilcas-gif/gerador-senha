@@ -1,4 +1,4 @@
-document.querySelector('.parametro-senha__texto');
+ccdocument.querySelector('.parametro-senha__texto');
 
 numeroSenha.textContent = 5;
 
@@ -24,7 +24,9 @@ geraSenha();
 const campoSenha = document.querySelector('#campo-senha');
 const checkbox = document.querySelectorAll('.checkbox');
 
-console.log(checkbox[0]checked);
+for (index = 0; index < checkbox.leght;index++) {
+    checkbox[index].onclick = geraSenha;
+}
 
 const letraMaiuscula = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const letraMinuscula = 'abcdefghijklmnopqrstuvwxy';
@@ -33,9 +35,23 @@ const simbolos = '!@#$%*?';
 geraSenha();
 
 functiom geraSenha(){
-    let senha ='';
-    for (let index = 0; index < tamanhoSenha; index++) { 
-    let numeroAleatorio = Math.random()*letrasMaiusculas.leght;
+    let alfabeto='';
+if (checkbox[0].checked) {
+    alfabeto = alfabeto + letraMaiusculas;
+}
+if (checkbox[1].checked) {
+    alfabeto = alfabeto +letraMinuscula
+}
+if (checkbox[2],checkd) {
+    alfabeto = alfabeto + numeros
+}
+if (checkbox[3],checkd) {
+    alfabeto = alfabeto + simbolos
+}
+console.log(alfabeto);
+let senha = '';
+    for (let index = 0; index < tamanhoSenha; index++) {
+    let numeroAleatorio = Math.random()*alfabeto.leght;
     numeroAleatorio = Math.floor(numeroAleatorio);
     senha = senha + letrasMaiusculas[numeroAleatorio]
 }
